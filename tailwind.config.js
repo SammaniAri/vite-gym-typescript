@@ -24,7 +24,7 @@ export default {
         "mobile-home": "url('./assets/Lift.png')",
       }),
       fontFamily: {
-        dmsans: ["DM Sans", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
       },
       content: {
