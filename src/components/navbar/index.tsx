@@ -1,9 +1,15 @@
-import { useState } from "react";
-import { BarsArrowDownIcon, XMarkIcon } from "@heroicons/react/24/solid";
+//import { useState } from "react";
+//import { BarsArrowDownIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import Link from "./Link";
 import Logo from "@/assets/Logo.png";
-type Props = {};
+import { SelectedPage } from "@/shared/types";
 
-const index = (props: Props) => {
+type Props = {
+  selectedPage: SelectedPage;
+  setSelectedPage: (value: SelectedPage) => void;
+};
+
+const index = ({ selectedPage, setSelectedPage }: Props) => {
   return (
     <nav>
       <div className="flex items-center justify-between fixed top-0 z-30 w-full py-6">
@@ -19,10 +25,26 @@ const index = (props: Props) => {
             className="flex items-center justify-between w-full"
           >
             <div className="flex items-center justify-between gap-8 text-sm">
-              <p>Home</p>
-              <p>Training</p>
-              <p>Book a personal coach</p>
-              <p>Contact Us</p>
+              <Link
+                page="Home"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Link
+                page="Training"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Link
+                page="Book a personal coach"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
+              <Link
+                page="Contact Us"
+                selectedPage={selectedPage}
+                setSelectedPage={setSelectedPage}
+              />
             </div>
             <div className="flex items-center justify-between gap-8">
               <p>Sign In</p> <button>Become a member</button>
